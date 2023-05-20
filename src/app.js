@@ -33,7 +33,7 @@ app.post('/todos', async (req, res)=>{
 app.post('/users', async (req, res)=>{
     try{
         const newUser = req.body
-        await Users.create(req.body);
+        await Users.create(newUser);
         res.status(201).send();
     }
     catch (error) {
@@ -82,6 +82,16 @@ app.delete('/todos/:id', async(req, res)=>{
             where: {id}
         })
         res.status(204).send()
+    }
+    catch (error) {
+        res.status(400).json(error)
+    }
+})
+app.post('/categories', async (req, res)=>{
+    try{
+        const newCategory = req.body
+        await Categories.create(newCategory)
+        res.status(201).send()
     }
     catch (error) {
         res.status(400).json(error)

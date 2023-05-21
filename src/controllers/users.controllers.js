@@ -1,6 +1,6 @@
-const Users = require('../models/users.model')
-const Todos = require('../models/todos.model')
-const Categories = require('../models/categories.model')
+const Users = require('../models/users.model');
+const Todos = require('../models/todos.model');
+const Categories = require('../models/categories.model');
 const createUser = async (req, res)=>{
     try{
         const newUser = req.body
